@@ -42,7 +42,7 @@ This project uses the limma package to analyze gene expression data and generate
 
 1. Clone the project.
 2. Install the required R packages.
-3. Run the R script `./volcano.R`.
+3. Run the R script `./DIffExp.R`.
 
 **Precautions**
 
