@@ -1,28 +1,63 @@
 **Differential Gene Expression Analysis**
 
-**Introduction:**
+**Project Introduction**
 
-This repository contains R code for performing differential gene expression analysis using data from the GEO database with accession number GSE233192.
+This project uses the limma package to analyze gene expression data and generate volcano plots and heatmaps.
 
-**Data Preparation:**
+**Data Source**
 
-The provided R script begins by clearing the workspace and loading necessary libraries such as limma and dplyr. It imports two datasets: "id_genesymbol.txt" containing gene IDs and symbols, and "GSE233192_series_matrix.txt" containing expression data. The gene symbols are cleaned to remove any empty values, and matching rows are selected from the expression dataset based on the gene IDs.
+* GEO database: [https://www.ncbi.nlm.nih.gov/geo/](https://www.ncbi.nlm.nih.gov/geo/)
 
-**Differential Expression Analysis:**
+**Analysis Workflow**
 
-The script sets up experimental groups ('control' and 'treatment') and designs a linear model to analyze differential gene expression between these groups. Contrasts are created to compare the 'control' group with the 'treatment' group. Differential expression analysis is performed using the limma package, and significantly differentially expressed genes are identified and saved to a file named "step2-deg.Rdata".
+1. Data preprocessing:
+    * Read expression data and gene annotation files.
+    * Filter missing values.
+    * According to the gene annotation file, keep the probe row with the maximum value in each gene expression matrix.
 
-**Visualization:**
+2. Differential gene analysis:
+    * Use the limma package to perform differential gene analysis.
+    * Screen for significantly differentially expressed genes.
 
-Several plots are generated to visualize the results:
-- A volcano plot displaying log-fold changes vs. significance levels.
-- Scatter plots to visualize the relationship between log-fold changes and significance levels.
-- A heatmap to visualize the expression profiles of the top 200 differentially expressed genes.
+3. Volcano plot drawing:
+    * Draw a volcano plot with logFC as the horizontal axis and -log10(P.Value) as the vertical axis.
+    * Mark significantly differentially expressed genes.
 
-**Conclusion:**
+4. Heatmap drawing:
+    * Perform cluster analysis on significantly differentially expressed genes.
+    * Draw a heatmap.
 
-This repository provides a comprehensive analysis pipeline for identifying and visualizing differentially expressed genes using R. Researchers can utilize this code to analyze gene expression data and gain insights into biological processes underlying experimental conditions.
+**Results**
 
-**Data Source:**
+* The differential gene analysis results are saved in the `./step2-deg.Rdata` file.
+* The volcano plot is saved in the `./volcano.png` file.
+* The heatmap is saved in the `./heatmap_top200_DEG.png` file.
 
-The expression data used in this analysis can be accessed from the NCBI GEO database with accession number GSE233192.
+**Running Environment**
+
+* R language environment
+* R packages: limma, dplyr, ggpubr, pheatmap
+
+**Instructions**
+
+1. Clone the project.
+2. Install the required R packages.
+3. Run the R script `./volcano.R`.
+
+**Precautions**
+
+* This project is for reference only, please adjust it according to the actual situation.
+* The R language version and R package version may affect the results.
+
+**Expected Results**
+
+* Volcano plot:
+    * Significantly up-regulated genes are located at the upper right of the volcano plot.
+    * Significantly down-regulated genes are located at the lower left of the volcano plot.
+* Heatmap:
+    * The expression pattern of differentially expressed genes is clearly visible.
+    * Genes with similar expression patterns are clustered together.
+
+**Future Work**
+
+* Further analysis of differentially expressed genes, such as functional annotation and pathway analysis.
