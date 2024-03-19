@@ -52,8 +52,8 @@ This project uses the limma package to analyze gene expression data and generate
 **Expected Results**
 
 * Volcano:
-    * Significantly up-regulated genes are located at the upper right of the volcano plot.
-    * Significantly down-regulated genes are located at the lower left of the volcano plot.
+    * Significantly up-regulated genes are located at the upper right of the volcano.
+    * Significantly down-regulated genes are located at the lower left of the volcano.
 * Heatmap:
     * The expression pattern of differentially expressed genes is clearly visible.
     * Genes with similar expression patterns are clustered together.
