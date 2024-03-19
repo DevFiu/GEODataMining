@@ -19,7 +19,7 @@ This project uses the limma package to analyze gene expression data and generate
     * Use the limma package to perform differential gene analysis.
     * Screen for significantly differentially expressed genes.
 
-3. Volcano plot drawing:
+3. Volcano drawing:
     * Draw a volcano plot with logFC as the horizontal axis and -log10(P.Value) as the vertical axis.
     * Mark significantly differentially expressed genes.
 
