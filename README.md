@@ -1,22 +1,28 @@
-# GEODataMining
+**Differential Gene Expression Analysis**
 
-1. **Data Source**: The code begins with a comment indicating the source of the data, which is a GEO dataset with accession number GSE233192 from NCBI.
+**Introduction:**
 
-2. **Data Preparation**:
-   - The code clears the workspace to start with a clean slate.
-   - It loads the necessary R libraries: limma and dplyr.
-   - It reads two files: "id_genesymbol.txt" containing gene IDs and symbols, and "GSE233192_series_matrix.txt" containing expression data.
-   - It preprocesses the data by removing empty gene symbols and selecting corresponding expression data based on the gene IDs.
+This repository contains R code for performing differential gene expression analysis using data from the GEO database with accession number GSE233192.
 
-3. **Differential Gene Expression Analysis**:
-   - The code sets up the experimental design, contrasts, and fits a linear model to the data using the limma package.
-   - Differential expression analysis is performed using eBayes and topTable functions to identify significantly differentially expressed genes between two experimental conditions (control and treatment).
-   - The results are saved to a file named "step2-deg.Rdata".
+**Data Preparation:**
 
-4. **Visualization**:
-   - Several plots are generated to visualize the results:
-     - A scatter plot of log-fold changes vs. -log10(p-values) is created to visualize differential expression, with genes color-coded based on significance and direction of change.
-     - Another scatter plot is created to visualize the relationship between average expression and log-fold change, with genes color-coded based on significance levels.
-     - A heatmap is generated to visualize the expression profiles of the top 200 differentially expressed genes.
+The provided R script begins by clearing the workspace and loading necessary libraries such as limma and dplyr. It imports two datasets: "id_genesymbol.txt" containing gene IDs and symbols, and "GSE233192_series_matrix.txt" containing expression data. The gene symbols are cleaned to remove any empty values, and matching rows are selected from the expression dataset based on the gene IDs.
 
-Overall, the code performs data loading, preprocessing, differential expression analysis, and visualization using R libraries such as limma, dplyr, ggpubr, and pheatmap. It provides insights into gene expression changes between different experimental conditions.
+**Differential Expression Analysis:**
+
+The script sets up experimental groups ('control' and 'treatment') and designs a linear model to analyze differential gene expression between these groups. Contrasts are created to compare the 'control' group with the 'treatment' group. Differential expression analysis is performed using the limma package, and significantly differentially expressed genes are identified and saved to a file named "step2-deg.Rdata".
+
+**Visualization:**
+
+Several plots are generated to visualize the results:
+- A volcano plot displaying log-fold changes vs. significance levels.
+- Scatter plots to visualize the relationship between log-fold changes and significance levels.
+- A heatmap to visualize the expression profiles of the top 200 differentially expressed genes.
+
+**Conclusion:**
+
+This repository provides a comprehensive analysis pipeline for identifying and visualizing differentially expressed genes using R. Researchers can utilize this code to analyze gene expression data and gain insights into biological processes underlying experimental conditions.
+
+**Data Source:**
+
+The expression data used in this analysis can be accessed from the NCBI GEO database with accession number GSE233192.
