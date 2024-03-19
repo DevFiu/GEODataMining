@@ -1,4 +1,4 @@
-**Differential Gene Expression Analysis**
+## **Differential Gene Expression Analysis**
 
 **Project Introduction**
 
