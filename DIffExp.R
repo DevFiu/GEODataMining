@@ -68,7 +68,6 @@ table(df$p_c)
 ggscatter(df, x="AveExpr", y="logFC", color="p_c", size=0.2, palette=c("green", "red", "black") )
 ggsave(df, './MA.png', width=8, height=6)
 
-
 # Plot Heatmap
 library(pheatmap)
 x = DiffEG$logFC             # Extract the logFC column from DiffEG and assign it to x
